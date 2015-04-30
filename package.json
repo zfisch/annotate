@@ -1,0 +1,24 @@
+{
+  "name": "annotate",
+  "version": "0.0.0",
+  "description": "package.json file for annotate",
+  "main": "server/app.js",
+  "dependencies": {
+    "bower-installer": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Isolated-Ocelot/annotate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Isolated-Ocelot/annotate/issues"
+  },
+  "homepage": "https://github.com/Isolated-Ocelot/annotate"
+}
