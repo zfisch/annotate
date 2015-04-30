@@ -1,0 +1,4 @@
+## Custom Ignore ##
+###################
+
+.DS_Store
