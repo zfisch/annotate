@@ -7,3 +7,9 @@ var getTime = setInterval(function(){
   }
 }, 1000);
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> master

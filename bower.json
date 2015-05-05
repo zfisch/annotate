@@ -1,0 +1,31 @@
+{
+  "name": "annotate",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Isolated-Ocelot/annotate",
+  "description": "bower.json file for annotate",
+  "main": "client/views/index.html",
+  "install": {
+    "path": "client/js"
+  },
+  "moduleType": [
+    "node"
+  ],
+  "authors": [
+    "Zack Fischmann",
+    "Charlie Hwang",
+    "Johnny Nguyen",
+    "Brant Choate"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "velocity": "~1.2.2"
+  }
+}
