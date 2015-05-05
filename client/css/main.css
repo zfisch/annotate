@@ -1,6 +1,9 @@
 /*
 configuration for skeleton.css
 */
+body {
+  font-family: 'aileronlight';
+}
 .container {
   max-width: 1600px;
 }
