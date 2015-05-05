@@ -18,6 +18,7 @@ function onPlayerStateChange(event) {
     getTime();
   } else if (event.data = YT.PlayerState.ENDED){
     //TODO: add handling for player paused.
+    done = true;
     clearInterval(getTime);
   }
 }
