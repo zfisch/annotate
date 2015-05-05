@@ -6,8 +6,9 @@ $(function(){
 });
 
 var append = function(html){
+  console.log(html);
   var $container = $('.container');
-  var $item = $(JSON.parse(html));
+  var $item = $(html);
 
   $container.prepend( $item )
     .isotope( 'prepended', $item );
