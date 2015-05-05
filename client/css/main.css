@@ -1,1 +1,43 @@
+/*
+configuration for skeleton.css
+*/
+.container {
+  max-width: 1600px;
+}
 
+.nav {
+  background: #141414;
+  border: 1px solid #979797;
+  height: 70px;
+}
+
+.nav ul {
+  list-style-type: none;
+}
+
+.nav ul li {
+  display: inline;
+}
+
+.containerforfeed {
+  width: 600px; 
+  margin: 0 auto;
+  height: 300px !important;
+  overflow: hidden !important;
+  -webkit-mask-image: -webkit-gradient(linear, left 95%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+.item { 
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 200px;
+  margin: 5px;
+  padding: 10px;
+  background: #888;
+  color: #262524;
+ }
+.item2 {
+  width: 200px;
+  height: 200px;
+}
