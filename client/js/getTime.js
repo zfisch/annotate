@@ -7,8 +7,3 @@ var getTime = setInterval(function(){
   }
 }, 1000);
 
-
-
-
-
-
