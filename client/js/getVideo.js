@@ -6,19 +6,20 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 //add video to page from url
 var displayVideo = function(url){
+  console.log('inside display vid ', url);
   var id = getVideoId(url);
+  console.log(id);
   var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '390',
-      width: '640',
-      videoId: id,
-    });
-  }
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: id,
+  });
 }
 
 //get video id from url
 var getVideoId = function(url){
+  console.log('inside getvideoid ', url)
   var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
   return (url.match(p)) ? RegExp.$1 : false ;
 }
