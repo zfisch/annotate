@@ -1,0 +1,29 @@
+{
+  "name": "annotate",
+  "version": "0.0.0",
+  "description": "package.json file for annotate",
+  "main": "server/app.js",
+  "dependencies": {
+    "bower-installer": "^1.2.0",
+    "express": "^4.12.3",
+    "pg": "^4.3.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^2.1.0",
+    "bower-installer": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Isolated-Ocelot/annotate.git"
+  },
+  "author": "Zack Fischmann, Charlie Hwang, Johnny Nguyen, Brant Choate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Isolated-Ocelot/annotate/issues"
+  },
+  "homepage": "https://github.com/Isolated-Ocelot/annotate"
+}
