@@ -26,6 +26,7 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "velocity": "~1.2.2"
+    "velocity": "~1.2.2",
+    "isotope": "~2.2.0"
   }
 }

@@ -1,5 +1,4 @@
 var tag = document.createElement('script');
-
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -7,7 +6,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //Hardcorded video json object for testing.
 var obj;
 $.ajax({
-  url: 'hard-data.json',
+  url: 'js/hard-data.json',
   type: 'GET',
   success: function(data){
     obj = data;
