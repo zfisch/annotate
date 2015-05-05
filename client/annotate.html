@@ -11,9 +11,11 @@
   <body>
       <input type='text' id="getVideo" placeholder="Enter a YouTube URL here.">
       <button onclick="displayVideo($('#getVideo').val())">Get Video</button>
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
       <input type='text' id="annotate" placeholder="Create an annotation here.">
       <button onclick="annotate($('#annotate').val())">Annotate</button>
+      <input type='text' id="name" placeholder="Create a name for your annotated video here.">
+      <button onclick="setName($('#name').val())">Set Name</button>
+      <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
       <div id="player"></div>
       <div class="container"></div>
   </body>

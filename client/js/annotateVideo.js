@@ -5,7 +5,7 @@ var createObj = function(){
   videoObj = {
     "video": {
       "id": id,
-      "name": "SpoonGuitar",
+      "name": null,
       "annotations": {
       }
     }
@@ -16,6 +16,13 @@ var annotate = function(input){
   if(videoObj === null){
     createObj();
   }
-  var annotationTime = player.getCurrentTime();
+  var annotationTime = Math.floor(player.getCurrentTime());
   videoObj.video.annotations[annotationTime] = input;
 };
+
+var setName = function(name){
+  if(videoObj === null){
+    createObj();
+  }
+  videoObj.video.name = name;
+}
