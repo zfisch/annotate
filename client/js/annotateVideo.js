@@ -32,7 +32,7 @@ var setName = function(name){
 
 //Sends videoObj to db.
 //TODO: test structuring of POST request on db. 
-var saveVid = function(videoObj){
+var saveVid = function(){
  $.ajax({
     url: 'api/users/0/media/0',
     type: 'POST',

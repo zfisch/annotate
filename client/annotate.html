@@ -9,14 +9,20 @@
   <link rel="stylesheet" href="css/feed.css">
 </head>
   <body>
+      <!-- TODO: Improve layout and design of these inputs/buttons. Functional, but terrible UX/Design. -->
       <input type='text' id="getVideo" placeholder="Enter a YouTube URL here.">
       <button onclick="displayVideo($('#getVideo').val())">Get Video</button>
+      <br>
       <input type='text' id="annotate" placeholder="Create an annotation here.">
       <button onclick="annotate($('#annotate').val())">Annotate</button>
+      <br>
       <input type='text' id="name" placeholder="Create a name for your annotated video here.">
       <button onclick="setName($('#name').val())">Set Name</button>
+      <br>
       <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
       <div id="player"></div>
+      <br>
+      <button onclick="saveVid()">Save Project</button>
       <div class="container"></div>
   </body>
 </html>
