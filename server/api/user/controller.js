@@ -21,30 +21,16 @@ exports.index = function(req, res) {
  */
 exports.show = function(req, res) {
   User
-    .findOne({where: { user_id: req.params.user_id }})
+    .find(req.body.userId)
+    // .find(req.params.userId) // or via user ID in param
     .then(function(user) {
-      user.getMedia({where: {user_id: user.user_id}})
-        .then(function(tasks) {
-          res.json(200, user);
-        }); 
-    });
-
-
-
-
-
-
-  // User
-  //   .find(req.body.userId)
-  //   // .find(req.params.userId) // or via user ID in param
-  //   .then(function(user) {
-  //     console.log('Success! User - find(): ', user);
+      console.log('Success! User - find(): ', user);
       
-  //     res.json(200, user);
-  //   })
-  //   .catch(function(err) {
-  //     console.log('Error! User - find(): ', err);
-  //   });
+      res.json(200, user);
+    })
+    .catch(function(err) {
+      console.log('Error! User - find(): ', err);
+    });
 };
 
 /**

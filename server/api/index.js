@@ -1,4 +1,3 @@
-
 var config = require('../config/db');
 var User = require('./user/model');
 var Media = require('./media/model');

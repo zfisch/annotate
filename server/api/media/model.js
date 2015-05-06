@@ -24,7 +24,7 @@ module.exports = db.sequelize.define('Media', {
     }
   },
   name: {
-    type: Sequelize.STRING, // add more values as needed e.g. Spotify
+    type: Sequelize.STRING,
     allowNull: false, 
     validate: {
       notEmpty: true

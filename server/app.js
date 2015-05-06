@@ -1,6 +1,10 @@
+/**
+ * Server set up.
+ **/
 var express = require('express');
 var app = express();
 var path = require('path');
+var bodyParser = require('body-parser');
 var api = require('./api');
 
 /**
@@ -27,6 +31,9 @@ app.get('/api/charlie', api.showAnnotation);
 app.get('/api/users/:userId/media/:mediaId', media.show);
 app.post('/api/users/:userId/media', media.create);
 
+/**
+ * Init server.
+ */
 var server = app.listen(9000, function () {
   var host = server.address().address;
   var port = server.address().port;
