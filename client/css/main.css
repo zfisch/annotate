@@ -11,9 +11,6 @@ html {
 body {
   font-family: 'aileronlight';
 }
-.container {
-  max-width: 1600px;
-}
 
 .nav {
   background: #141414;

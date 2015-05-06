@@ -18,14 +18,15 @@ $.ajax({
 var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
-    height: '450',
-    width: '790',
+    height: '458',
+    width: '906',
     videoId: obj.video.id,
     playerVars: { 
-      'showinfo': 0,
-      'hd': 1,
-      'autohide': 1,
-      'rel': 0
+      'showinfo': 0, //hides title + other garbage for cleaner look
+      'hd': 1, //uses HD version if available
+      'autohide': 1, //autohides the controls when video starts playing
+      'rel': 0, //turns off related vidoes
+      'iv_load_policy': 3 //this turns off the youtube annotations
     },
     events: {
       'onStateChange': onPlayerStateChange
