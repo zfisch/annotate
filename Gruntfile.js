@@ -7,8 +7,17 @@ module.exports = function(grunt) {
         separator: ';'
       },
       build: {
-        src: ['client/**/*.js'],
-        dest: 'client/build/<%= pkg.name %>.js'
+        src: [
+          'server/**/*.js',
+        ],
+        dest: 'server/build/<%= pkg.name %>.js'
+      },
+
+      build: {
+        src: [
+          'server/site/css/*.css'
+        ],
+        dest: 'server/build/<%= pkg.name %>.css'
       }
     },
 
@@ -24,7 +33,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'client/build/<%= pkg.name %>.min.js': ['<%= concat.build.dest %>']
+          'server/build/<%= pkg.name %>.min.js': ['<%= concat.build.dest %>']
         }
       }
     },
@@ -33,7 +42,6 @@ module.exports = function(grunt) {
       files: [
         'Gruntfile.js',
         'server/**/*.js',
-        'client/**/*.js',
       ],
     },
 
@@ -43,7 +51,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'client/build/style.min.css': 'client/css/*.css'
+          'server/build/style.min.css': 'server/site/css/*.css'
         }
       }
     },
@@ -51,7 +59,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: [
-          'client/**/*.js',
+          'server/**/*.js',
         ],
         tasks: [
           'concat',
@@ -59,7 +67,7 @@ module.exports = function(grunt) {
         ]
       },
       css: {
-        files: 'client/css/*.css',
+        files: 'sever/site/css/*.css',
         tasks: ['cssmin']
       }
     },
@@ -88,9 +96,11 @@ module.exports = function(grunt) {
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
-  grunt.registerTask('default', ['concat', 'uglify', 'cssmin', 'nodemon']);
+  grunt.registerTask('default', ['nodemon']);
+  
+  grunt.registerTask('build', ['concat', 'uglify', 'cssmin']);
 
-  grunt.registerTask('test', [
+  grunt.registerTask('lint', [
     'jshint',
   ]);
 
