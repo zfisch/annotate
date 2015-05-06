@@ -2,9 +2,9 @@ var Sequelize = require('sequelize');
 var db = require('../../config/db');
 
 module.exports = db.sequelize.define('Annotation', {
-  uuid: {
-    type: Sequelize.UUID,
-    defaultValue: Sequelize.UUIDV1,
+  annotation_id: {
+    type: Sequelize.INTEGER, 
+    autoIncrement: true,
     primaryKey: true
   },
   notes: {
