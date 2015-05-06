@@ -4,7 +4,7 @@ var getTime = function() {
     setInterval(function() {
     currentVideoTime = Math.floor(player.getCurrentTime());
     if(obj.video.annotations[currentVideoTime]){
-      append(obj.video.annotations[currentVideoTime]);
+      append(obj.video.annotations[currentVideoTime], secondsToString(currentVideoTime));
     }
   }, 1000);
 };

@@ -5,9 +5,9 @@ $(function(){
   });
 });
 
-var append = function(html){
+var append = function(html, time){
   var $container = $('.feed');
-  var $item = $('<div class="feed-item">' + html + '</div>');
+  var $item = $('<div class="feed-item"><span class="time">'+ time +'</span>' + html + '</div>');
 
   $container.prepend( $item )
     .isotope( 'prepended', $item );

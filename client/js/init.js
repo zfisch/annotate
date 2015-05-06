@@ -24,7 +24,8 @@ function onYouTubeIframeAPIReady() {
     playerVars: { 
       'showinfo': 0,
       'hd': 1,
-      'autohide': 1 
+      'autohide': 1,
+      'rel': 0
     },
     events: {
       'onStateChange': onPlayerStateChange
