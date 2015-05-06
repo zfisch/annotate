@@ -6,34 +6,25 @@ module.exports = function(grunt) {
       options: {
         separator: ';'
       },
-      dist: {
-        src: ['public/client/**/*.js'],
-        dest: 'public/dist/<%= pkg.name %>.js'
-      }
-    },
-
-    mochaTest: {
-      test: {
-        options: {
-          reporter: 'spec'
-        },
-        src: ['test/**/*.js']
+      build: {
+        src: ['client/**/*.js'],
+        dest: 'client/build/<%= pkg.name %>.js'
       }
     },
 
     nodemon: {
       dev: {
-        script: 'server.js'
+        script: 'server/app.js'
       }
     },
 
     uglify: {
-      options: {
+      options: {  
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
-      dist: {
+      build: {
         files: {
-          'public/dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+          'client/build/<%= pkg.name %>.min.js': ['<%= concat.build.dest %>']
         }
       }
     },
@@ -41,29 +32,18 @@ module.exports = function(grunt) {
     jshint: {
       files: [
         'Gruntfile.js',
-        'app/**/*.js',
-        'public/**/*.js',
-        'lib/**/*.js',
-        './*.js',
-        'spec/**/*.js'
+        'server/**/*.js',
+        'client/**/*.js',
       ],
-      options: {
-        force: 'true',
-        jshintrc: '.jshintrc',
-        ignores: [
-          'public/lib/**/*.js',
-          'public/dist/**/*.js'
-        ]
-      }
     },
 
     cssmin: {
       options: {
         keepSpecialComments: 0
       },
-      dist: {
+      build: {
         files: {
-          'public/dist/style.min.css': 'public/style.css'
+          'client/build/style.min.css': 'client/css/*.css'
         }
       }
     },
@@ -71,8 +51,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: [
-          'public/client/**/*.js',
-          'public/lib/**/*.js',
+          'client/**/*.js',
         ],
         tasks: [
           'concat',
@@ -80,19 +59,8 @@ module.exports = function(grunt) {
         ]
       },
       css: {
-        files: 'public/*.css',
+        files: 'client/css/*.css',
         tasks: ['cssmin']
-      }
-    },
-
-    shell: {
-      prodServer: {
-        command: 'git push azure master',
-        options: {
-          stdout: true,
-          stderr: true,
-          failOnError: true
-        }
       }
     },
   });
@@ -102,8 +70,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-mocha-test');
-  grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-nodemon');
 
   grunt.registerTask('server-dev', function (target) {
@@ -122,30 +88,10 @@ module.exports = function(grunt) {
   ////////////////////////////////////////////////////
   // Main grunt tasks
   ////////////////////////////////////////////////////
+  grunt.registerTask('default', ['concat', 'uglify', 'cssmin', 'nodemon']);
 
   grunt.registerTask('test', [
     'jshint',
-    'mochaTest'
-  ]);
-
-  grunt.registerTask('build', [
-    'concat',
-    'uglify',
-    'cssmin'
-  ]);
-
-  grunt.registerTask('upload', function(n) {
-    if(grunt.option('prod')) {
-      grunt.task.run([ 'shell:prodServer' ]);
-    } else {
-      grunt.task.run([ 'server-dev' ]);
-    }
-  });
-
-  grunt.registerTask('deploy', [
-    'test',
-    'build',
-    'upload'
   ]);
 
 
