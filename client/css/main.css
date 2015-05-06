@@ -1,6 +1,13 @@
 /*
 configuration for skeleton.css
 */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: 'aileronlight';
 }
@@ -12,6 +19,8 @@ body {
   background: #141414;
   border: 1px solid #979797;
   height: 70px;
+  color: #fff;
+  padding: 20px 0;
 }
 
 .nav ul {
@@ -20,6 +29,44 @@ body {
 
 .nav ul li {
   display: inline;
+}
+
+.feed-item {
+  border: 1px solid #DADADA;
+  padding: 20px;
+  /* Wayfarers Odd Future: */
+  font-family: Aileron-Light;
+  font-size: 14px;
+  color: #303030;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  margin: 26px;
+}
+
+.time {
+  text-align: center;
+  display: block;
+  margin-top: -33px;
+  margin-bottom: 20px;
+  border: 1px solid #DDD;
+  width: 50px;
+  border-radius: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFF;
+  padding: 3px;
+}
+
+.feed {
+  padding-top: 60px;
+}
+
+.feed-item .long {
+  font-family: Aileron-Light;
+  font-size: 18px;
+  color: #2B2B2B;
+  letter-spacing: 0.2px;
+  line-height: 25px;
 }
 
 .containerforfeed {
