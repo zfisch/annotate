@@ -4,6 +4,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 //Get hardcorded video json object for testing.
+//TODO: Use a URL from an annotated video link to query the db..
 var obj;
 $.ajax({
   url: 'js/hard-data.json',
@@ -13,7 +14,7 @@ $.ajax({
   }
 });
 
-//Get video for player.
+//Display a video based on the object returned from the DB in GET req.
 var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
@@ -26,11 +27,11 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
-//Listener for player state changes. Calls getTime every second.
+//Listener for player state changes. Calls getTime every second only if vid is playing.
 function onPlayerStateChange(event) {
   if (event.data === YT.PlayerState.PLAYING) {
     getTime();
-  } else if (event.data === YT.PlayerState.ENDED || event.data === YT.PlayerState.PAUSED){
+  } else if (event.data === YT.PlayerState.ENDED || event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.BUFFERING){
     clearInterval(getTime);
   }
 }
