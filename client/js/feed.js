@@ -1,21 +1,20 @@
 $(function(){
-  $('.container').isotope({
-    itemSelector: '.item',
+  $('.feed').isotope({
+    itemSelector: '.feed-item',
     layoutModde: 'fitRows'
   });
 });
 
 var append = function(html){
-  console.log(html);
-  var $container = $('.container');
-  var $item = $(html);
+  var $container = $('.feed');
+  var $item = $('<div class="feed-item">' + html + '</div>');
 
   $container.prepend( $item )
     .isotope( 'prepended', $item );
 };
 
 var pop = function(){
-  var $container = $('.container');
+  var $container = $('.feed');
   var $item = $('.item')[0];
  
   $container.isotope( 'remove', $item )
