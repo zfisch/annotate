@@ -39,6 +39,6 @@ function onPlayerStateChange(event) {
   if (event.data === YT.PlayerState.PLAYING) {
     getTime();
   } else if (event.data === YT.PlayerState.ENDED || event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.BUFFERING){
-    clearInterval(getTime);
+    clearInterval(intervalID);
   }
 }
