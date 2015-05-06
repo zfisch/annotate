@@ -2,9 +2,9 @@ var Sequelize = require('sequelize');
 var db = require('../../config/db');
 
 module.exports = db.sequelize.define('Media', {
-  uuid: {
-    type: Sequelize.UUID,
-    defaultValue: Sequelize.UUIDV1,
+  media_id: {
+    type: Sequelize.INTEGER, 
+    autoIncrement: true,
     primaryKey: true
   },
   link: {
@@ -21,5 +21,16 @@ module.exports = db.sequelize.define('Media', {
     validate: {
       notEmpty: true,
     }
+  },
+  name: {
+    type: Sequelize.STRING, // add more values as needed e.g. Spotify
+    allowNull: false, 
+    validate: {
+      notEmpty: true,
+    }
+  },
+  notes: {
+    type: Sequelize.JSON, 
+    allowNull: true
   }
 });

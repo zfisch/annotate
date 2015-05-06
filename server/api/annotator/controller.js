@@ -1,13 +1,15 @@
 var Annotator = require('./model');
 
 exports.index = function(req, res) {
-  console.log('===========:', Annotator);
+  // console.log('===========:', Annotator);
 
   Annotator
     .findAll()
     .then(function(annotators) {
       console.log('Success! Annotator - findAll(): ', annotators);
-      res.json(200, annotators);
+      
+      res.json(200);
+      res.end();
     })
     .error(function(err) {
       console.log('Error! Annotator - findAll(): ', err);
