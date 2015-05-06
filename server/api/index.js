@@ -1,13 +1,12 @@
 
 var config = require('../config/db');
-var Annotator = require('./annotator/model');
+var User = require('./user/model');
 var Media = require('./media/model');
 // var Annotation = require('./annotation/model');
 
-
 exports.showAnnotation = function(req, res) {
   
-  Annotator
+  User
     .findAll({
     	where: {
   		  username:'johnny'
@@ -16,11 +15,11 @@ exports.showAnnotation = function(req, res) {
   	      {model:Media},
   	    ]
   	})
-    .then( function(annotators) {
+    .then( function(users) {
       
-      var video_id = annotators[0]['Media'][0]['media_id'];
-      var name = annotators[0]['Media'][0]['name'];
-      var annotation = annotators[0]['Media'][0]['notes'];
+      var video_id = users[0]['Media'][0]['media_id'];
+      var name = users[0]['Media'][0]['name'];
+      var annotation = users[0]['Media'][0]['notes'];
 
       var result = {
       	video:{

@@ -1,11 +1,18 @@
 var Sequelize = require('sequelize');
 var db = require('../../config/db');
 
-module.exports = db.sequelize.define('Annotator', {
-  annotator_id: {
+module.exports = db.sequelize.define('User', {
+  user_id: {
     type: Sequelize.INTEGER, 
     autoIncrement: true,
     primaryKey: true
+  },
+  isAnnotator: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: true,
+    validate: {
+      notEmpty: true
+    }
   },
   username: {
     type: Sequelize.STRING,

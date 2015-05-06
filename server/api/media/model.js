@@ -17,16 +17,17 @@ module.exports = db.sequelize.define('Media', {
   },
   source: {
     type: Sequelize.ENUM('YouTube'), // add more values as needed e.g. Spotify
+    defaultValue: 'YouTube',
     allowNull: false,
     validate: {
-      notEmpty: true,
+      notEmpty: true
     }
   },
   name: {
     type: Sequelize.STRING, // add more values as needed e.g. Spotify
     allowNull: false, 
     validate: {
-      notEmpty: true,
+      notEmpty: true
     }
   },
   notes: {
