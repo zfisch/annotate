@@ -1,8 +1,6 @@
 var Media = require('./model');
 
 exports.index = function(req, res) {
-  console.log(Media);
-
   Media
     .findAll()
     .then(function(media) {
@@ -28,7 +26,8 @@ exports.show = function(req, res) {
 };
 
 exports.create = function(req, res) {
-  console.log('request body: ', req.params)
+  req.body.user_id = req.params.userId;
+  
   Media
     .create(req.body)
     .then(function(media) {

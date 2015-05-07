@@ -25,6 +25,7 @@ module.exports = db.sequelize.define('Media', {
   },
   name: {
     type: Sequelize.STRING,
+    defaultValue: 'video name',
     allowNull: false, 
     validate: {
       notEmpty: true
