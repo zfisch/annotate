@@ -16,10 +16,10 @@ var displayVideo = function(url){
     width: '640',
     videoId: id,
   });
-}
+};
 
 //Parse a video ID from a url for getting vid from youtube API
 var getVideoId = function(url){
   var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
   return (url.match(p)) ? RegExp.$1 : false ;
-}
+};

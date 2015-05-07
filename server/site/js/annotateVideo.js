@@ -10,7 +10,7 @@ var createObj = function(id){
       "annotations": {
       }
     }
-  }
+  };
 };
 
 //create an annotation at a given time
@@ -28,7 +28,7 @@ var setName = function(name){
     return alert("Please upload a video first!");
   }
   videoObj.video.name = name;
-}
+};
 
 //Sends videoObj to db.
 //TODO: test structuring of POST request on db. 
@@ -41,4 +41,4 @@ var saveVid = function(){
       //TODO: expecting some sort of data to structure a url for sharing the saved annotated video
     }
  });
-}
+};
