@@ -17,8 +17,8 @@ var sequelize = new Sequelize('postgres', 'root', 'root', {
  */
 exports.sequelize = sequelize;
 
-var User = require('../api/user/model');
 var Media = require('../api/media/model');
+var User = require('../api/user/model');
 
 User.hasMany(Media, {foreignKey:'user_id'});
 
@@ -30,7 +30,7 @@ User.sync({force: true}).then(function() {
   User.create({ username: 'charlie', password: 'holler' }); 
   User.create({ username: 'brant',   password: 'holler' });
   User.create({ username: 'zack',    password: 'holler' });
-});  
+});
 
 /**
  * Drop and create Media table.

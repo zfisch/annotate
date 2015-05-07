@@ -1,8 +1,6 @@
 var Media = require('./model');
 
 exports.index = function(req, res) {
-  console.log(Media);
-
   Media
     .findAll()
     .then(function(media) {

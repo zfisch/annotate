@@ -9,11 +9,13 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var db = require('./config/db');
+
 /**
  * Import media controler to be used in API routes.
  */
-var media = require('./api/media/controller');
 var user = require('./api/user/controller');
+var media = require('./api/media/controller');
 
 /**
  * Static routes.
