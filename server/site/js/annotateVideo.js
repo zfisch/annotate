@@ -5,7 +5,7 @@ var videoObj = null;
 var createObj = function(id){
   videoObj = {
     "video": {
-      "videoId": id,
+      "video_id": id,
       "name": null,
       "annotations": {
       }
