@@ -15,6 +15,14 @@ module.exports = db.sequelize.define('Media', {
       isUrl: true
     }
   },
+  video_id: {
+    type: Sequelize.STRING,
+    defaultValue: 'video name',
+    allowNull: false, 
+    validate: {
+      notEmpty: true
+    }
+  },
   source: {
     type: Sequelize.ENUM('YouTube'), // add more values as needed e.g. Spotify
     defaultValue: 'YouTube',
@@ -31,7 +39,7 @@ module.exports = db.sequelize.define('Media', {
       notEmpty: true
     }
   },
-  notes: {
+  annotations: {
     type: Sequelize.JSON, 
     allowNull: true
   }
