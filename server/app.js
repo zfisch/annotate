@@ -20,10 +20,10 @@ var media = require('./api/media/controller');
 /**
  * Static routes.
  */
-app.get('/users/:userId/media/:mediaId', function(req, res) { res.sendFile(path.join(__dirname + '/site/views/index.html')); });
-app.post('/users/:userId/media', function(req, res) { res.sendFile(path.join(__dirname + '/site/views/index.html')); });
+app.get('/users/:userId/media/:mediaId', function(req, res) { res.sendFile(path.join(__dirname + '/site/index.html')); });
+app.post('/users/:userId/media', function(req, res) { res.sendFile(path.join(__dirname + '/site/index.html')); });
 
-app.get('/', function(req, res) { res.sendFile(path.join(__dirname + '/site/views/index.html')); });
+app.get('/', function(req, res) { res.sendFile(path.join(__dirname + '/site/index.html')); });
 
 /**
  * API routes.
