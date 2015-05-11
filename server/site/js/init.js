@@ -7,7 +7,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //TODO: Use a URL from an annotated video link to query the db..
 var obj;
 $.ajax({
-  url: 'js/hard-data.json',
+  url: '/api/users/1/media/2',
   type: 'GET',
   success: function(data){
     obj = data;
@@ -20,7 +20,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '458',
     width: '906',
-    videoId: obj.video.id,
+    videoId: obj.video_id,
     playerVars: { 
       'showinfo': 0, //hides title + other garbage for cleaner look
       'hd': 1, //uses HD version if available
