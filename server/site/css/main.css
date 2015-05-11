@@ -12,6 +12,10 @@ body {
   font-family: 'aileronlight';
 }
 
+.main {
+  padding-top: 50px;
+}
+
 .nav {
   background: #141414;
   border: 1px solid #979797;
@@ -34,7 +38,7 @@ body {
   border: 1px solid #DADADA;
   padding: 20px;
   font-family: Aileron-Light;
-  font-size: 18px;
+  font-size: 22px;
   color: #303030;
   letter-spacing: 0.2px;
   line-height: 18px;
@@ -42,13 +46,13 @@ body {
   width: 600px;
 }
 
-/*.long {
-  font-size: 18px;
-  color: #2B2B2B;
-  letter-spacing: 0.2px;
-  line-height: 25px;
-  width: 480px;
-}*/
+.video-title {
+  margin-top:-80px;
+}
+
+.video-subtitle {
+  color:#777;
+}
 
 .time {
   text-align: center;
@@ -77,7 +81,7 @@ body {
 
 .feed {
   padding-top: 60px;
-  height: 450px !important;
+  height: 600px !important;
   overflow: hidden !important;
   -webkit-mask-image: -webkit-gradient(linear, left 95%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }

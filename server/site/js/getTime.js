@@ -5,14 +5,8 @@ var getTime = function() {
   intervalID = setInterval(function() {
     currentVideoTime = Math.floor(player.getCurrentTime());
     if(obj.video.annotations[currentVideoTime]){
-      append(obj.video.annotations[currentVideoTime], secondsToString(currentVideoTime));
+      append(obj.video.annotations[currentVideoTime], currentVideoTime);
     }
   }, 1000);
 };
-
-function secondsToString(seconds) {
-  var numminutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
-  var numseconds = (((seconds % 31536000) % 86400) % 3600) % 60;
-  return numminutes + ':' + numseconds;
-}
 
