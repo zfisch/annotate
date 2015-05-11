@@ -1,6 +1,6 @@
 # Annotate
 
-> Pithy project description
+> Better annotations for video.
 
 ## Team
 
