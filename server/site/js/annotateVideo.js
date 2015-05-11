@@ -4,12 +4,10 @@ var videoObj = null;
 //gets called when video is chosen by the user
 var createObj = function(id){
   videoObj = {
-    "video": {
-      "link": "https://www.youtube.com/watch?v=" + id,
-      "video_id": id,
-      "name": null,
-      "annotations": {
-      }
+    "link": "https://www.youtube.com/watch?v=" + id,
+    "video_id": id,
+    "name": null,
+    "annotations": {
     }
   };
 };
@@ -20,7 +18,7 @@ var annotate = function(input){
     return alert("Please upload a video first!");
   }
   var annotationTime = Math.floor(player.getCurrentTime());
-  videoObj.video.annotations[annotationTime] = input;
+  videoObj.annotations[annotationTime] = input;
 };
 
 //choose a name for the annotated video project
@@ -28,7 +26,7 @@ var setName = function(name){
   if(videoObj === null){
     return alert("Please upload a video first!");
   }
-  videoObj.video.name = name;
+  videoObj.name = name;
 };
 
 //Sends videoObj to db.

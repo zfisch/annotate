@@ -7,7 +7,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //TODO: Use a URL from an annotated video link to query the db..
 var obj;
 $.ajax({
-  url: '/api/users/1/media/2',
+  url: '/api/users/1/media/1',
   type: 'GET',
   success: function(data){
     obj = data;

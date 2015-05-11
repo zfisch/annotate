@@ -4,8 +4,8 @@ var intervalID;
 var getTime = function() {
   intervalID = setInterval(function() {
     currentVideoTime = Math.floor(player.getCurrentTime());
-    if(obj.video.annotations[currentVideoTime]){
-      append(obj.video.annotations[currentVideoTime], currentVideoTime);
+    if(obj.annotations[currentVideoTime]){
+      append(obj.annotations[currentVideoTime], currentVideoTime);
     }
   }, 1000);
 };
