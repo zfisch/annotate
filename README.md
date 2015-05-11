@@ -55,11 +55,11 @@ To run the app, Postgres must be installed with proper role set up. Follow the d
 #### Set Up Root DB Role ####
 1. Type command "psql".
 2. Will be in Postgres shell. Prompt should be "=#" (instead of $).
-3. Then type command "CREATE ROLE root WITH LOGIN;"
-4. Then type command "ALTER ROLE root WITH SUPERUSER;"
-5. Then type command "ALTER ROLE root WITH CREATEROLE;"
-6. Then type command "ALTER ROLE root WITH CREATEDB;"
-7. Then type command "ALTER ROLE root WITH REPLICATION;"
+3. Then type command `CREATE ROLE root WITH LOGIN;`
+4. Then type command `ALTER ROLE root WITH SUPERUSER;`
+5. Then type command `ALTER ROLE root WITH CREATEROLE;`
+6. Then type command `ALTER ROLE root WITH CREATEDB;`
+7. Then type command `ALTER ROLE root WITH REPLICATION;`
 
 ### Roadmap
 
