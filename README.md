@@ -63,7 +63,7 @@ To run the app, Postgres must be installed with proper role set up. Follow the d
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://github.com/Isolated-Ocelot/annotate/issues).
 
 ## Contributing
 
