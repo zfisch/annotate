@@ -5,6 +5,7 @@ var videoObj = null;
 var createObj = function(id){
   videoObj = {
     "video": {
+      "link": "https://www.youtube.com/watch?v=" + id,
       "video_id": id,
       "name": null,
       "annotations": {
@@ -34,7 +35,7 @@ var setName = function(name){
 //TODO: test structuring of POST request on db. 
 var saveVid = function(){
  $.ajax({
-    url: 'api/users/0/media/0',
+    url: '/api/users/1/media',
     type: 'POST',
     data: videoObj,
     success: function(data){

@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "homepage": "https://github.com/Isolated-Ocelot/annotate",
   "description": "bower.json file for annotate",
-  "main": "client/views/index.html",
+  "main": "server/site/index.html",
   "install": {
-    "path": "client/js"
+    "path": "server/site/js"
   },
   "moduleType": [
     "node"
