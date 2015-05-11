@@ -20,8 +20,10 @@ var media = require('./api/media/controller');
 /**
  * Static routes.
  */
+app.use(express.static(__dirname + '/site'));
+
 app.get('/users/:userId/media/:mediaId', function(req, res) { res.sendFile(path.join(__dirname + '/site/index.html')); });
-app.post('/users/:userId/media', function(req, res) { res.sendFile(path.join(__dirname + '/site/index.html')); });
+app.get('/users/:userId/media', function(req, res) { res.sendFile(path.join(__dirname + '/site/annotate.html')); });
 
 app.get('/', function(req, res) { res.sendFile(path.join(__dirname + '/site/index.html')); });
 
